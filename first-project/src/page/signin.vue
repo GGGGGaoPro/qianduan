@@ -1,4 +1,4 @@
-<template>
+<template style="background: url(../../static/0.jpg);">
   <div id="content" class="content">
     <!--头像start-->
     <img class="head" src="../assets/WX1.jpg"/>
@@ -65,7 +65,6 @@ export default{
 </script>
 
 <style scoped  lang="scss">
-
   body { margin: 0; padding: 0;}
 
   .content {

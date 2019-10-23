@@ -14,6 +14,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      // 注册
       path: '/',
       name: 'Signin',
       component: Signin,
@@ -21,6 +22,7 @@ export default new Router({
       }
     },
     {
+      // 登录
       path: '/login',
       name: 'Login',
       component: Login,
@@ -43,11 +45,13 @@ export default new Router({
       component: List
     },
     {
+      // 我的
       path: '/me',
       name: 'Me',
       component: Me
     },
     {
+      // 修改信息
       path: '/alter',
       name: 'Alter',
       component: Alter,
@@ -55,6 +59,7 @@ export default new Router({
       }
     },
     {
+      // 选择爱好
       path: '/s1',
       name: 'S1',
       component: S1,

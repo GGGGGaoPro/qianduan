@@ -15,6 +15,7 @@
         </div>
       </div>
       <div id="mid">
+        <!-- 菜系分类界面 -->
         <van-grid clickable>
           <van-grid-item icon="photo-o" text="菜" url=""/>
           <van-grid-item icon="photo-o" text="系" url=""/>
