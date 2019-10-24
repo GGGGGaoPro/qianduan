@@ -10,7 +10,6 @@
           <div id="title-text">
             <h4 style="color: #000000; margin: 9px; font-size: 15px;">用户名</h4>
             <h4 style="color: #999999; margin: 13px 9px 8px 9px; font-size: 14px;">简介</h4>
-
           </div>
         </div>
       </div>

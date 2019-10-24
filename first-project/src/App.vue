@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <van-tabbar v-model="active" v-show="!this.$route.meta.isshow">
-      <van-tabbar-item icon="chat-o" to="/index">主</van-tabbar-item>
-      <van-tabbar-item icon="search" to="/list">通讯录</van-tabbar-item>
-      <van-tabbar-item icon="friends-o" to="/find">发现</van-tabbar-item>
+      <van-tabbar-item icon="home-o" to="/main">广场</van-tabbar-item>
+      <van-tabbar-item icon="apps-o" to="/classify">分类</van-tabbar-item>
+      <van-tabbar-item icon="plus"  to="/jiacai"></van-tabbar-item>
+      <van-tabbar-item icon="friends-o" to="/forum">讨论区</van-tabbar-item>
       <van-tabbar-item icon="setting-o" to="/me">我的</van-tabbar-item>
     </van-tabbar>
     <transition :name="transitionName">
       <router-view/>
     </transition>
-
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
       // 此时假设从index页面跳转到pointList页面
       console.log(to)
       console.log(from)
-      const routeDeep = ['/', '/S1', 'login', '/index', 'me', '/alter']
+      const routeDeep = ['/', '/S1', 'login', '/main', 'me', '/alter', 'ckxx', 'dongtai', 'guanzhu', 'jiacai', 'laixiaoxi', 'pinglun', 'tianjia', 'zuofa']
       const toDepth = routeDeep.indexOf(to.path)
       const fromDepth = routeDeep.indexOf(from.path)
       this.transitionName = toDepth > fromDepth ? 'fold-left' : 'fold-right'
@@ -36,14 +36,17 @@ export default {
 }
 </script>
 
+<style scoped="scoped">
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
+</style>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-.fold-left-enter-active {
+  .fold-left-enter-active {
     animation-name: fold-left-in;
     animation-duration: .3s;
   }
