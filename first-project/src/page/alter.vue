@@ -75,14 +75,15 @@ export default{
       value1: 0
     }
   },
-  // back  为返回上层页面，save先修改个人资料，再返回上层页面
   methods: {
+    // back  为返回上层页面，save先修改个人资料，再返回上层页面
     back: function () {
       this.$router.push({path: '/me'})
     },
     save: function () {
       this.$router.push({path: '/me'})
     },
+    // 修改用户性别,点击即弹窗
     change: function () {
       this.$dialog.confirm({
         confirmButtonText: '女生',

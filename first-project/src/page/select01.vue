@@ -2,7 +2,7 @@
 <template >
   <div class="body">
     <div id="title-text">
-      <p class="p">您中意的菜系</p>
+      <p class="p">中意的菜系</p>
     </div>
     <div id="title">
       <van-button round type="info" size="small" class="bt" :class="{'bt':A,'bt1':!A}" @click="change1">川菜</van-button>
@@ -15,15 +15,19 @@
       <van-button round type="info" size="small" class="bt" :class="{'bt':H,'bt1':!H}" @click="change8">徽菜</van-button>
       <!--<van-button round type="warning" size="small" class="bt" :class="{'bt':isA,'bt2':!isA}" v-for="(c,l) in CXlist" @click="change(l)">{{c.cai}}</van-button>-->
     </div>
-    <div id="float-text">
-      <p class="p1">最喜欢的口味</p>
+    <div id="body-text">
+      <p class="p1">喜欢的口味</p>
     </div>
-    <div id="float">
+    <div id="body">
       <van-button round type="info" size="small" class="bt2" :class="{'bt2':K1,'bt3':!K1}" @click="changeK1">酸</van-button>
       <van-button round type="info" size="small" class="bt2" :class="{'bt2':K2,'bt3':!K2}" @click="changeK2">甜</van-button>
       <van-button round type="info" size="small" class="bt2" :class="{'bt2':K3,'bt3':!K3}" @click="changeK3">苦</van-button>
       <van-button round type="info" size="small" class="bt2" :class="{'bt2':K4,'bt3':!K4}" @click="changeK4">辣</van-button>
       <van-button round type="info" size="small" class="bt2" :class="{'bt2':K5,'bt3':!K5}" @click="changeK5">咸</van-button>
+    </div>
+    <div id="float">
+      <van-button round type="info" size="small" @click="submit" id="sub">我选好啦</van-button>
+      <p class="p2" @click="pass"><ins>跳过此步</ins></p>
     </div>
   </div>
 </template>
@@ -51,6 +55,19 @@ export default {
     }
   },
   methods: {
+    submit () {
+      // 提交数据,跳转页面
+      this.$router.push({path: '/index'})
+    },
+    pass () {
+      // 弹出提示，跳转页面
+      this.$dialog.alert({
+        message: '记得以后要提交哦'
+      }).then(() => {
+        // on confirm
+        this.$router.push({path: '/index'})
+      })
+    },
     // 实现点击变色
     change1 () {
       this.A = !this.A
@@ -109,7 +126,7 @@ export default {
       margin-left: 19%;
       margin-right: 2%;
     }
-    #float {
+    #body {
       margin-left: 19%;
     }
     .p {
@@ -127,6 +144,15 @@ export default {
       margin-left: 19%;
       margin-top: 7%;
       margin-bottom: 10px;
+    }
+    .p2 {
+      font-family: kaiti;
+      font-size: 19px;
+      font-weight: 300;
+      color: #777777;
+      margin-left: 8%;
+      margin-top: 22px;
+      float: left;
     }
     .bt {
       min-width: 15%;
@@ -167,6 +193,17 @@ export default {
       font-family: kaiti;
       color: #000000;
       background: linear-gradient(45deg,rgba(254,172,94,0.25),rgba(199,121,208,0.25),rgba(75,192,200,0.25));
+    }
+    #sub {
+      font-family: kaiti;
+      font-size: 19px;
+      font-weight: 300;
+      color: #000000;
+      margin-top: 10px;
+      margin-left: 21%;
+      height: 40px;
+      float: left;
+      background: linear-gradient(45deg,rgba(254,172,94,0.45),rgba(199,121,208,0.35),rgba(75,192,200,0.35));
     }
 
 </style>

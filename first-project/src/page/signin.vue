@@ -49,7 +49,7 @@ export default{
   methods: {
     signin: function () {
       if (this.UserPassword !== '' && this.UserPassword === this.MakeSure) {
-        this.$router.push({path: '/index'})
+        this.$router.push({path: '/S1'})
       }
     }
   },
