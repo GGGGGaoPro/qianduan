@@ -111,7 +111,7 @@ export default {
   }
 }
 </script>
-<style scoped='scoped '>
+<style scoped="scoped">
   .body {
     background: url(../assets/bg3.jpg);
     /* background-size: cover;   */

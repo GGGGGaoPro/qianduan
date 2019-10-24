@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped="scoped">
   .van-card__title{
     line-height: 25px;
     font-size: 20px;

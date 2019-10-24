@@ -52,7 +52,7 @@ export default {
 // 跳转至 修改页面
 
 </script>
-<style>
+<style scoped="scoped">
   body {
     background-color: #F0F0F0;
   }

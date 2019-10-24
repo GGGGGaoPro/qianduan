@@ -64,7 +64,7 @@ export default{
 }
 </script>
 
-<style scoped  lang="scss">
+<style scoped="scoped"  lang="scss">
   body { margin: 0; padding: 0;}
 
   .content {
