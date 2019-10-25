@@ -7,14 +7,15 @@
     <!--userName start-->
     <div class="minput">
       <img src="../assets/icon-user.png"/>
-      <input v-model="userName" type="text" placeholder="请输入手机号"/>
+      <input v-model="phone" type="text" placeholder="请输入手机号"/>
     </div>
+	<img class="verifyCode" @click="" src="http://localhost:8080/TeamApp_User/user/getVerifyCode.action">
     <!--userName end-->
 
     <!--password start-->
     <div class="minput">
       <img src="../assets/icon-password.png"/>
-      <input v-model="userPassword" type="password" placeholder="请输入密码"/>
+      <input v-model="password" type="password" placeholder="请输入密码"/>
     </div>
     <!--password start-->
 
@@ -32,16 +33,37 @@ export default{
   data () {
     return {
       ok: false,
-      userName: '',
-      userPassword: ''
+      phone: '',
+      password: ''
     }
   },
   // 登录验证，成功跳转
-  methods: {
+methods: {
     login: function () {
-      if (this.userName === 'admin' && this.userPassword === 'admin') {
-        this.$router.push({path: '/index'})
-      }
+		var t = this.$toast.loading({
+			mask:true,
+			duratrion:0,
+			forbidClick:true,
+			message:'登录中...'
+		});
+		this.$axios.get('http://localhost:8080/TeamApp_User/user/login.action',{
+			params:{
+				phone:this.phone,
+				password:this.password
+			}
+		}).then(response =>{
+			t.clear();
+			if(response.data.code == 1){
+				this.$toast(response.data.msg);
+				localStorage.setItem("com.lanq",this.phone);
+				// localStorage.setItem("com.id",response.data.Data.id);
+				this.$router.push({'path': '/square'})
+			}else if(response.data.code == 0){
+				this.$toast(response.data.msg);
+			}else if(response.data.code == 2){
+				this.$toast(response.data.msg);
+			}
+		})
     }
   },
   beforeRouteEnter: (to, from, next) => {

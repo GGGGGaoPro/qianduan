@@ -25,7 +25,7 @@
 
 <van-tabs v-model="active" style="margin-top: 3px; border-top: 6px white solid; " v-if="!this.$route.meta.isShow" >
   <van-tab title="关注" to="/guanzhu"></van-tab>
-  <van-tab title="发现" ></van-tab>
+  <van-tab title="发现" to="" ></van-tab>
 
 </van-tabs>
 
