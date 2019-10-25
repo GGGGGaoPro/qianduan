@@ -6,7 +6,7 @@ import Signin from '@/page/signin'
 import Me from '@/page/me'
 import Alter from '@/page/alter'
 import S1 from '@/page/select01'
-import main from '@/page/main'
+import square from '@/page/square'
 import forum from '@/page/forum'
 import classify from '@/page/classify'
 import Guanzhu from '@/page/guanzhu'
@@ -17,6 +17,14 @@ import tianjia from '@/page/tianjia'
 import jiacai from '@/page/jiacai'
 import ckxx from '@/page/ckxx'
 import laixiaoxi from '@/page/laixiaoxi'
+import lucai from '@/page/fenlei/lucai'
+import chuancai from '@/page/fenlei/chuancai'
+import xiangcai from '@/page/fenlei/xiangcai'
+import mincai from '@/page/fenlei/mincai'
+import zhecai from '@/page/fenlei/zhecai'
+import yuecai from '@/page/fenlei/yuecai'
+import sucai from '@/page/fenlei/sucai'
+import huicai from '@/page/fenlei/huicai'
 
 Vue.use(Router)
 export default new Router({
@@ -47,9 +55,9 @@ export default new Router({
     },
     {
       //主页面
-      path: '/main',
-      name: 'main',
-      component: main
+      path: '/square',
+      name: 'square',
+      component: square
     },
     {
       // 分类
@@ -88,49 +96,112 @@ export default new Router({
       path: '/zuofa',
       name: 'zuofa',
       component: zuofa,
-      meta: {isShow: true}
+      meta: {isShow: true,
+      }
     },
     {
       // 动态
       path: '/dongtai',
       name: 'dongtai',
       component: dongtai,
-      meta: {isShow: true}
+      meta: {isShow: true,
+      }
     },
     {
       // 评论
       path: '/pinglun',
       name: 'pinglun',
       component: pinglun,
-      meta: {isShow: true}
+      meta: {isShow: true,
+      }
     },
     {
       // 添加
       path: '/tianjia',
       name: 'tianjia',
       component: tianjia,
-      meta: {isShow: true}
+      meta: {isShow: true,
+      }
     },
     {
       // 添加菜谱
       path: '/jiacai',
       name: 'jiacai',
       component: jiacai,
-      meta: {isShow: true}
+      meta: {isShow: true,
+      }
     },
     {
       // 查看信息
       path: '/ckxx',
       name: 'ckxx',
       component: ckxx,
-      meta: {isShow: true}
+      meta: {isShow: true
+      }
     },
     {
       // 来消息
       path: '/laixiaoxi',
       name: 'laixiaoxi',
       component: laixiaoxi,
-      meta: {isShow: true}
+      meta: {isShow: true
+      }
+    },
+    {
+      path: '/lucai',
+      name: 'lucai',
+      component: lucai,
+      meta:{isShow:true,
+      }
+    },
+    {
+      path: '/xiangcai',
+      name: 'xiangcai',
+      component: xiangcai,
+      meta:{isShow:true,
+      }
+    },
+    {
+      path: '/chuancai',
+      name: 'chuancai',
+      component: chuancai,
+      meta:{isShow:true,
+      }
+    },
+    {
+      path: '/mincai',
+      name: 'mincai',
+      component: mincai,
+      meta:{isShow:true,
+      }
+    },
+    {
+      path: '/zhecai',
+      name: 'zhecai',
+      component: zhecai,
+      meta:{isShow:true,
+      }
+    },
+    {
+      path: '/yuecai',
+      name: 'yuecai',
+      component: yuecai,
+      meta:{isShow:true,
+      }
+    },
+    {
+      path: '/sucai',
+      name: 'sucai',
+      component: sucai,
+      meta:{isShow:true,
+      }
+    },
+    {
+      path: '/huicai',
+      name: 'huicai',
+      component: huicai,
+      meta:{isShow:true,
+      }
     }
   ]
 })

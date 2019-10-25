@@ -69,7 +69,7 @@
 <script>
 
 export default {
-  name: 'main',
+  name: 'square',
   data () {
     return {
       active: 1,
