@@ -9,7 +9,6 @@
       <img src="../assets/icon-user.png"/>
       <input v-model="phone" type="text" placeholder="请输入手机号"/>
     </div>
-	<img class="verifyCode" @click="" src="http://localhost:8080/TeamApp_User/user/getVerifyCode.action">
     <!--userName end-->
 
     <!--password start-->
