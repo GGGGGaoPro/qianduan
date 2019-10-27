@@ -6,7 +6,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 import App from './App'
 import router from './router'
-import $ from 'jquery'
+import $ from 'jquery'  
 import axios from 'axios'
 
 Vue.prototype.$axios = axios

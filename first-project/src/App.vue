@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <van-tabbar v-model="active" v-show="!this.$route.meta.isshow">
-      <van-tabbar-item icon="home-o" to="/main">广场</van-tabbar-item>
+      <van-tabbar-item icon="home-o" to="/square">广场</van-tabbar-item>
       <van-tabbar-item icon="apps-o" to="/classify">分类</van-tabbar-item>
       <van-tabbar-item icon="plus"  to="/jiacai"></van-tabbar-item>
       <van-tabbar-item icon="friends-o" to="/forum">讨论区</van-tabbar-item>
@@ -25,8 +25,7 @@ export default {
   watch: {
     '$route' (to, from) {
       // 此时假设从index页面跳转到pointList页面
-      console.log(to)
-      console.log(from)
+
       const routeDeep = ['/', '/S1', 'login', '/main', 'me', '/alter', 'ckxx', 'dongtai', 'guanzhu', 'jiacai', 'laixiaoxi', 'pinglun', 'tianjia', 'zuofa']
       const toDepth = routeDeep.indexOf(to.path)
       const fromDepth = routeDeep.indexOf(from.path)

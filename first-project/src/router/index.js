@@ -25,6 +25,7 @@ import zhecai from '@/page/fenlei/zhecai'
 import yuecai from '@/page/fenlei/yuecai'
 import sucai from '@/page/fenlei/sucai'
 import huicai from '@/page/fenlei/huicai'
+import cdpinglun from '@/page/cdpinglun'
 
 Vue.use(Router)
 export default new Router({
@@ -197,11 +198,16 @@ export default new Router({
       }
     },
     {
+      path: '/cdpinglun',
+      name: 'cdpinglun',
+      component: cdpinglun,
+      meta:{isShow:true,}
+      },
+    {
       path: '/huicai',
       name: 'huicai',
       component: huicai,
-      meta:{isShow:true,
-      }
+      meta:{isShow:true,}
     }
   ]
 })

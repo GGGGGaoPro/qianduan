@@ -1,5 +1,3 @@
-<!-- 首页页面 -->
-
 <template>
  <div>
 
@@ -25,7 +23,7 @@
 
 <van-tabs v-model="active" style="margin-top: 3px; border-top: 6px white solid; " v-if="!this.$route.meta.isShow" >
   <van-tab title="关注" to="/guanzhu"></van-tab>
-  <van-tab title="发现" to="" ></van-tab>
+  <van-tab title="发现" ></van-tab>
 
 </van-tabs>
 
@@ -41,24 +39,37 @@
 
 <div id="div4">
 
-  <div id="div5"><h3>为您推荐</h3></div>
+  <router-link to="/ceshi"><div id="div5"><h3>为您推荐</h3></div>  </router-link>
   <div id="div6"><router-link to='/classify' ><h5>菜谱分类</h5></router-link></div>
 
 </div>
 
 <div id="div_left">
-<div v-for="m in msglist">
+    <!-- <template	v-for="m in msglist">
+     	<van-card
+     	:desc="m.uId"
+     	:title="m.bTitle"
+     				:thumb="`http://10.150.5.120:8080/cover/${m.cover}`"
+     	></van-card> -->
+
+<div	v-for="(m,i) in msglist">
+
 
 <div class="div1">
  <router-link to='/zuofa'>
-<img class="img3"  :src="`http://10.150.5.120:8080/cover/${m.cover}`"  /></router-link>
+<img class="img3"  :src="`http://10.150.5.120:8080/cover/${m.cover}`"   /></router-link>
 
-<router-link to="/khxx"><img id="img3" :src="`http://10.150.5.120:8080/cover/${m.cover}`" /></router-link>
-<p class="like" id='pp'>&#10084;</p>
-<router-link to="/khxx"><h6>{{m.bTitle}}</h6></router-link>
+<router-link to="/ckxx"><img id="img3"  :src="`http://10.150.5.120:8080/cover/${m.cover}`"         /></router-link>
+<p class="like" id='pp'   @click="change($event)">&#10084;
+    <span id="phid" style="display: none;">{{m.uId}}</span>
+</p>
+<router-link to="/ckxx"><h6>{{m.bTitle}}</h6></router-link>
+
 
 </div>
 </div>
+
+
 
 </div>
 
@@ -68,49 +79,95 @@
 
 <script>
 
+
 export default {
-  name: 'square',
-  data () {
-    return {
-      active: 1,
-      msglist: null,
-      userlist: null,
-      id: 0
-    }
-  },
-  methods: {
+//   name: 'square',
+//   data () {
+//     return {
+//       active: 1,
+//       msglist: null,
+//       userlist: null,
+//       id:1
+//     }
+//   },
+//   methods: {
+//       change(e){
+//
+//          console.log($(e.target).children().text())
+//           //var o = this.msglist[index];
+//           $(e.target).toggleClass('cc')
+//           var value=$('#phid').text()
+//           this.id=$(e.target).children().text()
+//       }
+//
+//   },
+//
+//   created() {
+//       var t = this.$toast.loading({ // 加载中
+//           mask: true,
+//           duration: 0,
+//           forbidClick: true,
+//           message: '正在加载...'
+//         })
+//
+//         this.$axios.get('http://10.150.5.120:8080/APP2/blog/getall.action', {
+//
+// //           params: {
+// //             fromUserId: 0 // localStorage.getItem('com.lanqiao.user.id')
+// //           }
+// //
+//         }).then(response => {
+//           t.clear()
+//           console.log(response.data)
+//         // console.log(response.data.uId)
+//
+//           // console.log(response.data)
+//           this.msglist = response.data
+//         })
+//
+//
+//
+//
+//       var z = this.$toast.loading({ // 加载中
+//           mask: true,
+//           duration: 0,
+//           forbidClick: true,
+//           message: '正在加载...'
+//         })
+//
+//         this.$axios.get('http://10.150.5.60:8080/springmvc04/test/save.action', {
+//
+//           params: {
+//             blogId: 1 ,// localStorage.getItem('com.lanqiao.user.id')
+//             userId:this.id
+//           }
+//
+//         }).then(response => {
+//           z.clear()
+//           console.log(response.data)
+//
+//
+//           // console.log(response.data)
+//
+//         })
+//   },
+//
+//   mounted () {
+//
+//   }
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-  },
-  mounted () {
-    var t = this.$toast.loading({ // 加载中
-      mask: true,
-      duration: 0,
-      forbidClick: true,
-      message: '正在加载...'
-    })
-
-    this.$axios.get('http://10.150.5.120:8080/APP2/blog/getall.action', {
-
-      params: {
-        fromUserId: 0 // localStorage.getItem('com.lanqiao.user.id')
-      }
-
-    }).then(response => {
-      t.clear()
-      console.log(response.data)
-      console.log(response.data[3].uId)
-
-      // console.log(response.data)
-      this.msglist = response.data
-    })
-  }
 }
 
-$(function () {
-  $('#pp').click(function () {
-    $(this).toggleClass('cc')
-  })
-})
+
 </script>
 
 <style scoped>
@@ -131,6 +188,10 @@ width: 100px;
      width: 100% ;
      height: 43px;
 
+   }
+
+   .van-swipe-item{
+     text-align: center;
    }
    #div2{
      width: 87% ;

@@ -38,7 +38,7 @@ export default {
   name: 'tianjia',
   methods: {
     onClickLeft () {
-      location.href = 'http://localhost/#/'
+      location.href = 'http://localhost/#/square'
     },
     onClickRight () {
       location.href = 'http://localhost/#/dongtai'

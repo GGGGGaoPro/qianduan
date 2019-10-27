@@ -9,6 +9,10 @@
       <img src="../assets/icon-user.png"/>
       <input v-model="phone" type="text" placeholder="请输入手机号"/>
     </div>
+<<<<<<< HEAD
+=======
+	<img class="verifyCode" @click="" >
+>>>>>>> ecbc1b9e216f72b66013e2c51f8e461168bc1a5f
     <!--userName end-->
 
     <!--password start-->
@@ -45,7 +49,7 @@ methods: {
 			forbidClick:true,
 			message:'登录中...'
 		});
-		this.$axios.get('http://localhost:8080/TeamApp_User/user/login.action',{
+		this.$axios.get('http://10.150.5.57:8080/TeamApp_User/user/login.action',{
 			params:{
 				phone:this.phone,
 				password:this.password
